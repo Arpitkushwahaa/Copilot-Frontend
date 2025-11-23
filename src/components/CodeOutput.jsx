@@ -67,7 +67,7 @@ export default function CodeOutput({ code, language, isDarkMode }) {
     if (!code) {
         return (
             <div className={`modern-card p-6 h-full min-h-[500px] flex items-center ${isDarkMode ? 'bg-slate-800 border-slate-700' : 'bg-white border-slate-200'} transition-all duration-200`}>
-                <div className="text-center w-full -mt-32">
+                <div className="text-center w-full -mt-48">
                     <div className={`inline-flex p-6 rounded-2xl mb-4 ${isDarkMode ? 'bg-slate-900/50' : 'bg-slate-100'}`}>
                         <CodeBracketIcon className={`h-16 w-16 ${isDarkMode ? 'text-slate-600' : 'text-slate-400'}`} />
                     </div>
