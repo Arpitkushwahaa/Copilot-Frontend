@@ -125,4 +125,17 @@ App runs on `http://localhost:5173`
 8. **Code Templates** - Pre-built patterns
 9. **Diff View** - Compare versions
 10. **GitHub Export** - Direct repo creation
-#
+
+## 🔧 Technologies Used
+
+- React 18
+- Vite
+- TailwindCSS
+- Heroicons
+- Express.js
+- Google Gemini AI
+- Prism Syntax Highlighter
+
+---
+
+Built with ❤️ using React and AI
