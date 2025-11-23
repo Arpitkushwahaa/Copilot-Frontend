@@ -100,13 +100,6 @@ export default function PromptInput({ onGenerate, isLoading, isDarkMode }) {
                         </div>
                     </div>
 
-                    {/* No Code Message */}
-                    {!prompt.trim() && (
-                        <div className={`mb-4 text-center py-3 rounded-xl border-2 border-dashed ${isDarkMode ? 'border-slate-700 bg-slate-900/50 text-slate-400' : 'border-slate-300 bg-slate-50 text-slate-500'} transition-all duration-300`}>
-                            <p className="text-sm font-semibold">✨ No code generated yet</p>
-                        </div>
-                    )}
-
                     {/* Generate Button with Gradient */}
                     <button
                         type="submit"
