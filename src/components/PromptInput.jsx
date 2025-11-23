@@ -100,16 +100,6 @@ export default function PromptInput({ onGenerate, isLoading, isDarkMode }) {
                         </div>
                     </div>
 
-                    {/* No Code Generated Message */}
-                    <div className={`mb-4 text-center py-4 rounded-xl ${isDarkMode ? 'bg-slate-900/50' : 'bg-slate-100'}`}>
-                        <p className={`text-lg font-semibold ${isDarkMode ? 'text-slate-300' : 'text-slate-700'}`}>
-                            No code generated yet
-                        </p>
-                        <p className={`text-sm mt-1 ${isDarkMode ? 'text-slate-500' : 'text-slate-400'}`}>
-                            Your generated code will appear on the right...
-                        </p>
-                    </div>
-
                     {/* Generate Button with Gradient */}
                     <button
                         type="submit"

@@ -67,7 +67,17 @@ export default function CodeOutput({ code, language, isDarkMode }) {
     if (!code) {
         return (
             <div className={`modern-card p-6 h-full min-h-[500px] ${isDarkMode ? 'bg-slate-800 border-slate-700' : 'bg-white border-slate-200'} transition-all duration-200`}>
-                <div className={`h-full border-2 border-dashed rounded-lg ${isDarkMode ? 'border-slate-700' : 'border-slate-300'}`}></div>
+                <div className="flex flex-col h-full">
+                    <div className={`mb-4 text-center py-4 rounded-xl ${isDarkMode ? 'bg-slate-900/50' : 'bg-slate-100'}`}>
+                        <p className={`text-lg font-semibold ${isDarkMode ? 'text-slate-300' : 'text-slate-700'}`}>
+                            No code generated yet
+                        </p>
+                        <p className={`text-sm mt-1 ${isDarkMode ? 'text-slate-500' : 'text-slate-400'}`}>
+                            Your generated code will appear here...
+                        </p>
+                    </div>
+                    <div className={`flex-1 border-2 border-dashed rounded-lg ${isDarkMode ? 'border-slate-700' : 'border-slate-300'}`}></div>
+                </div>
             </div>
         );
     }
