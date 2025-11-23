@@ -109,10 +109,16 @@ export default function PromptInput({ onGenerate, isLoading, isDarkMode }) {
                     <button
                         type="submit"
                         disabled={!prompt.trim() || isLoading}
-                        className="btn-ripple relative w-full overflow-hidden bg-gradient-to-r from-blue-500 via-purple-600 to-pink-600 hover:from-blue-600 hover:via-purple-700 hover:to-pink-700 disabled:from-slate-700 disabled:to-slate-800 disabled:cursor-not-allowed text-white font-extrabold text-lg py-5 px-8 rounded-xl transition-all duration-300 flex items-center justify-center gap-3 shadow-2xl hover:shadow-[0_0_40px_rgba(168,85,247,0.8)] hover:scale-[1.05] active:scale-[0.95] disabled:hover:scale-100 animate-gradient bg-[length:200%_auto] group"
+                        className="btn-ripple relative w-full overflow-hidden bg-gradient-to-r from-blue-500 via-purple-600 to-pink-600 hover:from-blue-600 hover:via-purple-700 hover:to-pink-700 disabled:from-slate-700 disabled:to-slate-800 disabled:cursor-not-allowed text-white font-extrabold text-lg py-5 px-8 rounded-2xl transition-all duration-500 flex items-center justify-center gap-3 shadow-2xl hover:shadow-[0_0_60px_rgba(168,85,247,1)] hover:scale-[1.08] active:scale-[0.95] disabled:hover:scale-100 animate-gradient bg-[length:200%_auto] group border-2 border-white/20">
                     >
-                        <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/30 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
-                        <div className="absolute inset-0 opacity-0 group-hover:opacity-20 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.8),transparent_50%)] transition-opacity duration-300"></div>
+                        <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/40 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
+                        <div className="absolute inset-0 opacity-0 group-hover:opacity-30 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.9),transparent_50%)] transition-opacity duration-300"></div>
+                        {/* Sparkle particles */}
+                        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                            <div className="absolute top-2 left-1/4 w-1 h-1 bg-white rounded-full animate-ping"></div>
+                            <div className="absolute top-4 right-1/3 w-1 h-1 bg-white rounded-full animate-ping animation-delay-2000"></div>
+                            <div className="absolute bottom-3 left-1/2 w-1 h-1 bg-white rounded-full animate-ping animation-delay-4000"></div>
+                        </div>
                         {isLoading ? (
                             <>
                                 <div className="relative animate-spin rounded-full h-6 w-6 border-3 border-white border-t-transparent"></div>

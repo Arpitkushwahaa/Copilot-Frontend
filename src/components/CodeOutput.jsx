@@ -97,7 +97,9 @@ export default function CodeOutput({ code, language, isDarkMode }) {
     }
 
     return (
-        <div className={`modern-card overflow-hidden h-full flex flex-col relative ${isDarkMode ? 'bg-gradient-to-br from-slate-800 via-slate-800 to-slate-900 border-slate-700' : 'bg-gradient-to-br from-white via-purple-50/30 to-blue-50/30 border-slate-200'} transition-all duration-500 shadow-2xl hover:shadow-purple-500/20 animate-in`}>
+        <div className={`modern-card overflow-hidden h-full flex flex-col relative ${isDarkMode ? 'bg-gradient-to-br from-slate-800 via-slate-800 to-slate-900 border-slate-700' : 'bg-gradient-to-br from-white via-purple-50/30 to-blue-50/30 border-slate-200'} transition-all duration-700 shadow-2xl hover:shadow-[0_0_60px_rgba(168,85,247,0.4)] animate-slide-in-right border-2 hover:scale-[1.01]`}>
+            {/* Success glow effect */}
+            <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-xl opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500"></div>
             {/* Header with Language Badge and Copy Button */}
             <div className={`px-5 py-3.5 flex items-center justify-between border-b backdrop-blur-sm ${isDarkMode ? 'bg-gradient-to-r from-slate-900/80 via-purple-900/30 to-slate-900/80 border-slate-700/50 shadow-lg shadow-purple-500/10' : 'bg-gradient-to-r from-slate-50 via-purple-50/50 to-slate-50 border-slate-200'} animate-in`}>
                 <div className="flex items-center gap-3">
