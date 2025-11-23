@@ -30,13 +30,14 @@ export default function HistoryPanel({ history, onSelectHistory, onClearHistory,
 
     if (history.length === 0) {
         return (
-            <div className={`modern-card p-6 ${isDarkMode ? 'bg-slate-800 border-slate-700' : 'bg-white border-slate-200'} transition-all duration-200`}>
-                <h2 className={`text-lg font-semibold mb-4 flex items-center gap-2 ${isDarkMode ? 'text-slate-100' : 'text-slate-900'}`}>
-                    <ClockIcon className="h-5 w-5" />
+            <div className={`modern-card p-6 relative overflow-hidden ${isDarkMode ? 'bg-gradient-to-br from-slate-800 via-slate-800 to-slate-900 border-slate-700' : 'bg-gradient-to-br from-white via-slate-50 to-purple-50/30 border-slate-200'} transition-all duration-500 shadow-xl hover:shadow-2xl animate-fade-in`}>
+                <div className=\"absolute inset-0 opacity-5\">\n                    <div className=\"absolute top-0 right-0 w-40 h-40 bg-purple-500 rounded-full filter blur-3xl animate-pulse\"></div>\n                </div>
+                <h2 className={`text-lg font-semibold mb-4 flex items-center gap-2 relative z-10 ${isDarkMode ? 'text-slate-100' : 'text-slate-900'}`}>
+                    <ClockIcon className="h-5 w-5 animate-pulse" />
                     Prompt History
                 </h2>
-                <div className="text-center py-12">
-                    <ClockIcon className={`h-12 w-12 mx-auto mb-3 ${isDarkMode ? 'text-slate-700' : 'text-slate-300'}`} />
+                <div className="text-center py-12 relative z-10">
+                    <div className=\"relative inline-block\">\n                        <div className=\"absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full blur-xl opacity-30 animate-pulse\"></div>\n                        <ClockIcon className={`h-12 w-12 mx-auto mb-3 relative ${isDarkMode ? 'text-slate-600' : 'text-slate-400'} animate-float`} />\n                    </div>
                     <p className={`text-sm font-medium ${isDarkMode ? 'text-slate-400' : 'text-slate-500'}`}>
                         No history yet
                     </p>
