@@ -1,116 +1,128 @@
-# Mini Code Copilot
+# Code Copilot - AI-Powered Code Generator
 
-A modern, AI-powered code generation assistant built with React. Generate code snippets in multiple programming languages with a beautiful, feature-rich interface.
+![Code Copilot UI](https://raw.githubusercontent.com/Arpitkushwahaa/Copilot-frontend/main/screenshot.png)
 
-![Mini Code Copilot](https://img.shields.io/badge/React-19.2.0-blue) ![Tailwind](https://img.shields.io/badge/Tailwind-3.4-cyan) ![Vite](https://img.shields.io/badge/Vite-7.2.4-purple)
+A modern, immersive web application for AI-powered code generation with a beautiful glassmorphism UI inspired by GitHub Copilot, Replit, and VSCode.
 
-## 🚀 Setup Instructions
+![React](https://img.shields.io/badge/React-19.2.0-blue) ![Tailwind](https://img.shields.io/badge/Tailwind-3.4-cyan) ![Vite](https://img.shields.io/badge/Vite-7.2.4-purple)
+
+## 🚀 Features
+
+- **AI Code Generation** - Generate code in 10+ programming languages using Google Gemini AI
+- **Syntax Highlighting** - Professional code display with VSCode Dark+ and Light themes
+- **Dark/Light Mode** - Seamless theme switching with persistent preferences
+- **Code History** - Track and revisit generated code with search and filtering
+- **Copy/Download/Favorites** - Export and bookmark code snippets
+- **Responsive Design** - Optimized for desktop, tablet, and mobile
+- **Immersive UI** - Animated gradients, glassmorphism, and smooth transitions
+
+## 📁 Project Structure
+
+```
+MiniCode-Copilot-main/
+├── frontend/                 # React + Vite frontend
+├── backend/                  # Node.js + Express backend
+│   ├── index.js             # API server with Gemini AI
+│   └── package.json
+├── src/
+│   ├── components/          # React components
+│   │   ├── Header.jsx       # Navigation bar
+│   │   ├── PromptInput.jsx  # Input form
+│   │   ├── CodeOutput.jsx   # Code display
+│   │   ├── HistoryPanel.jsx # History sidebar
+│   │   └── WarningPopup.jsx # Validation modal
+│   ├── pages/
+│   │   └── Home.jsx         # Main page
+│   ├── utils/
+│   │   ├── api.js           # API client
+│   │   └── promptCheck.js   # Prompt validation
+│   └── styles/
+│       └── global.css
+└── README.md
+```
+
+## 🛠️ Setup Instructions
 
 ### Prerequisites
-- Node.js (v16 or higher)
-- npm or yarn
+- Node.js 16+
+- npm
+- Google Gemini API key
 
-### Installation & Running
-1. **Navigate to the project directory:**
-   ```bash
-   cd frontend/mycopilot
-   ```
+### Backend Setup
+```bash
+cd backend
+npm install
+```
 
-2. **Install dependencies:**
-   ```bash
-   npm install
-   ```
+Create `.env`:
+```env
+GEMINI_API_KEY=your_api_key_here
+PORT=3001
+```
 
-3. **Start the development server:**
-   ```bash
-   npm run dev
-   ```
+Start backend:
+```bash
+npm start
+```
 
-   > **Note**: This is a **Static Demo** version. It uses high-quality, pre-written code snippets for each language to demonstrate the UI and functionality without needing an API key.
+### Frontend Setup
+```bash
+npm install
+npm run dev
+```
 
-4. **Open your browser:**
-   The app will be running at `http://localhost:5173`
+App runs on `http://localhost:5173`
 
-### Deployment (Vercel)
-This project is configured for easy deployment on Vercel.
-1. Push the code to a GitHub repository.
-2. Import the project into Vercel.
-3. Vercel will automatically detect the `vercel.json` and deploy.
+## 🏗️ Architecture Decisions
 
----
+**Frontend:**
+- **React + Vite** - Fast development with HMR
+- **TailwindCSS** - Utility-first styling with custom theme
+- **react-syntax-highlighter** - Professional code display with Prism
+- **LocalStorage** - Persistent theme and history
 
-## 🏗️ Brief Design/Architecture Decisions
+**Backend:**
+- **Express.js** - Lightweight REST API
+- **Google Gemini AI** - Advanced code generation
+- **CORS enabled** - Cross-origin support
 
-### 1. Frontend-First Architecture (SPA)
-- **Decision**: Removed the custom Express backend in favor of a client-side architecture.
-- **Reasoning**: Simplifies deployment (can be hosted on Vercel/Netlify as a static site), reduces latency for mock data, and directly integrates with external APIs (OpenRouter) from the client.
+**Design System:**
+- Custom color palette for dark/light modes
+- Gradient animations and glassmorphism effects
+- 40/60 split layout (input/output)
+- Inter font (UI) + JetBrains Mono (code)
 
-### 2. Tech Stack: Vite + React + Tailwind
-- **Vite**: Chosen for instant server start and HMR (Hot Module Replacement), providing a superior developer experience over Create React App.
-- **Tailwind CSS**: Enables rapid UI development with utility classes, making it easy to implement complex designs like glassmorphism and dark mode without writing custom CSS files.
-- **React Syntax Highlighter**: Uses Prism.js under the hood to provide accurate, theme-able syntax highlighting for generated code.
+## 📡 API Example
 
-### 3. Smart Mock Data Strategy
-- **Decision**: Implemented a robust fallback system.
-- **Reasoning**: Ensures the application is always usable, even without API credits or internet connection. The system detects the selected language and returns a relevant, pre-written snippet (e.g., selecting "Python" returns Python code) instead of generic lorem ipsum.
+**Endpoint:** `POST http://localhost:3001/api/generate`
 
-### 4. State Management
-- **React Hooks**: `useState` for local UI state and `useEffect` for side effects (persistence).
-- **LocalStorage**: Used to persist user preferences (Dark Mode) and History, ensuring a seamless experience across sessions without needing a database.
-
----
-
-## ✨ List of Implemented Features
-
-### Core Functionality
-- **Multi-Language Support**: Generate code in 10 languages (JS, Python, Java, C++, C#, Go, Rust, TypeScript, PHP, Ruby).
-- **Smart AI Integration**: Connects to OpenRouter (GPT-4o) for high-quality generation.
-- **Robust Fallback**: Automatically switches to language-specific mock data if the API fails.
-
-### UI/UX Polish
-- **Dynamic Theming**: Beautiful Light and Dark modes that instantly switch the UI and code editor themes (VS Light vs. VS Code Dark+).
-- **Glassmorphism**: Modern, translucent UI elements with backdrop blur.
-- **Responsive Design**: Fully optimized for mobile, tablet, and desktop.
-
-### Developer Experience Tools
-- **History System**: Automatically saves prompts; includes search and language filtering.
-- **Code Editor Controls**:
-  - **Copy to Clipboard**: One-click copy with visual feedback.
-  - **Font Size**: Adjustable text size for better readability.
-  - **Syntax Highlighting**: Professional-grade coloring for all supported languages.
-
----
-
-## 🔮 If I had more time, what would you improve or add?
-
-1.  **Streaming Responses**: Implement streaming for the OpenRouter API so code appears character-by-character, giving a more "real-time" AI feel.
-2.  **Code Explanation & Chat**: Add a "Chat" mode where users can ask follow-up questions about the generated code or request refactors.
-3.  **User Accounts**: Implement Supabase or Firebase Auth to sync history across devices.
-4.  **Multiple Files**: Allow generating multiple related files (e.g., a component and its CSS) in one go.
-5.  **Unit Tests**: Add comprehensive unit tests using Vitest and React Testing Library to ensure reliability.
-
----
-
-## 🔌 Example API Payload
-
-Although this project is now frontend-only, it communicates with the OpenRouter API. Here is the structure of the payload sent to the LLM:
-
-**Endpoint**: `https://openrouter.ai/api/v1/chat/completions`
-
-**Request Body:**
+**Request:**
 ```json
 {
-  "model": "openai/gpt-4o",
-  "messages": [
-    {
-      "role": "system",
-      "content": "You are an expert coding assistant. Generate clean, production-ready python code based on the user's request. Provide ONLY the code, no explanations."
-    },
-    {
-      "role": "user",
-      "content": "Create a function to calculate the fibonacci sequence"
-    }
-  ]
+  "prompt": "Create a Python function to calculate fibonacci numbers",
+  "language": "python"
 }
 ```
+
+**Response:**
+```json
+{
+  "code": "def fibonacci(n):\n    if n <= 1:\n        return n\n    return fibonacci(n-1) + fibonacci(n-2)"
+}
+```
+
+## 🎯 Future Improvements
+
+**If I had more time:**
+
+1. **User Authentication** - Save history across devices
+2. **Code Execution** - Run code in browser with sandboxing
+3. **Multi-file Projects** - Generate entire project structures
+4. **Code Explanations** - AI-powered analysis and docs
+5. **Collaboration** - Share snippets with team
+6. **Version Control** - Track code iterations
+7. **AI Model Selection** - GPT-4, Claude, etc.
+8. **Code Templates** - Pre-built patterns
+9. **Diff View** - Compare versions
+10. **GitHub Export** - Direct repo creation
 #
